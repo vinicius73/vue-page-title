@@ -27,4 +27,4 @@ const buildPageTitle = (value, options = { }) => {
   return `${safeString(prefix)} ${value} ${safeString(suffix)}`.trim()
 }
 
-export { buildPageTitle, isFunction }
+export { buildPageTitle, isFunction, safeString }

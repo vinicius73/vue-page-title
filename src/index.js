@@ -1,4 +1,5 @@
-import { isFunction } from './utils'
+import mixin from './mixin'
+import { setPageTitle } from './page-title'
 
 const install = (Vue, options = {}) => {
   // prevent double install
@@ -17,23 +18,14 @@ const install = (Vue, options = {}) => {
   Object.defineProperty(Vue.prototype, '$title', {
     get: () => $page.title,
     set: value => {
+      setPageTitle(value, options)
       $page.title = value
     }
   })
 
   // add global mixin
-  Vue.mixin({
-    created () {
-      const { title } = this.$options
-
-      if (title !== undefined) {
-        // allow use dinamic title system
-        this.$title = isFunction(title)
-          ? title(this)
-          : title
-      }
-    }
-  })
+  Vue.mixin(mixin)
 }
 
 export { install }
+export default { install }
