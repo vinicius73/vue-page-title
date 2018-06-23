@@ -2,10 +2,21 @@
   "name": "vue-page-title",
   "version": "0.1.0",
   "description": "Vue.js html/page title manager",
-  "main": "dist/index.js",
   "repository": "https://github.com/vinicius73/vue-page-title",
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "vue", "head", "title", "document", "meta"
+  ],
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "unpkg": "dist/vue.iife.js",
+  "jsdelivr": "dist/vue.iife.js",
+  "files": [
+    "src",
+    "src",
+    "dist/*.js"
+  ],
   "scripts": {
     "build": "rm -rf dist/ && rollup -c",
     "build:demo": "cd demo && rollup -c --environment NODE_ENV:production,"
