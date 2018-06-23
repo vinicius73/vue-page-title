@@ -7,7 +7,7 @@
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rm -rf dist/ && rollup -c",
     "build:demo": "cd demo && rollup -c --environment NODE_ENV:production,"
   },
   "devDependencies": {
