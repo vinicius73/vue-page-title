@@ -128,3 +128,4 @@ fabric.properties
 # End of https://www.gitignore.io/api/node,webstorm
 
 dist/
+demo/app.web.js
