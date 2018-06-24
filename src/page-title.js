@@ -5,7 +5,7 @@ import { buildPageTitle, safeString } from './utils'
  * @method isBrowser
  * @return {Boolean}
  */
-const isBrowser = () => !(typeof documentx !== 'undefined')
+const isBrowser = () => (typeof document !== 'undefined')
 
 /**
  * update document.title
