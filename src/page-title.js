@@ -16,6 +16,7 @@ const isBrowser = () => !(typeof documentx !== 'undefined')
  */
 const setPageTitle = (value, options) => {
   // test if not is a browser
+  /* istanbul ignore next: SSR */
   if (!isBrowser()) {
     console.warn('no browser enviroment')
     return

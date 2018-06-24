@@ -21,7 +21,7 @@ const safeString = st => st || ''
  * @param  {Object}       [options={ suffix, prefix }]
  * @return {String}       full title
  */
-const buildPageTitle = (value, options = { }) => {
+const buildPageTitle = (value, options) => {
   const { prefix, suffix } = options
 
   return `${safeString(prefix)} ${value} ${safeString(suffix)}`.trim()

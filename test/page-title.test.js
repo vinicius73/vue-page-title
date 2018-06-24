@@ -88,4 +88,14 @@ test('change title', t => {
 
   t.is(wrapper.vm.$title, 'Assassin')
   t.is(wrapper.html(), '<h1>Assassin</h1>')
+
+  wrapper.vm.$title = ''
+
+  t.is(wrapper.vm.$title, '')
+  t.is(wrapper.html(), '<h1></h1>')
+
+  wrapper.vm.$title = undefined
+
+  t.is(wrapper.vm.$title, undefined)
+  t.is(wrapper.html(), '<h1></h1>')
 })

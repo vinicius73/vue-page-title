@@ -3,6 +3,7 @@ import { setPageTitle } from './page-title'
 
 const install = (Vue, options = {}) => {
   // prevent double install
+  /* istanbul ignore next */
   if (install.installed) return
   install.installed = true
 
