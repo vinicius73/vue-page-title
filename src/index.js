@@ -27,5 +27,7 @@ const install = (Vue, options = {}) => {
   Vue.mixin(mixin)
 }
 
+const VuePageTitle = { install }
+
 export { install }
-export default { install }
+export default VuePageTitle

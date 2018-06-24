@@ -6,7 +6,11 @@
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
   "license": "MIT",
   "keywords": [
-    "vue", "head", "title", "document", "meta"
+    "vue",
+    "head",
+    "title",
+    "document",
+    "meta"
   ],
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -22,13 +26,31 @@
     "build:demo": "cd demo && rollup -c --environment NODE_ENV:production,"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/register": "^7.0.0-beta.51",
+    "@vue/test-utils": "^1.0.0-beta.19",
+    "ava": "^0.25.0",
+    "babel-preset-env": "^1.7.0",
+    "browser-env": "^3.2.5",
     "eslint": "^5.0.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
+    "require-extension-hooks": "^0.3.2",
+    "require-extension-hooks-vue": "^1.0.1",
     "rollup": "^0.61.2",
     "vue": "^2.5.16"
+  },
+  "engines": {
+    "node": ">= 8.0.0",
+    "npm": ">= 5.0.0"
+  },
+  "ava": {
+    "require": [
+      "@babel/register",
+      "./test/helpers/setup.js"
+    ]
   }
 }
