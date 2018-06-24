@@ -18,7 +18,7 @@ import VuePageTitle from 'vue-page-title'
 
 Vue.use(VuePageTitle, {
   // prefix: 'My App - ',
-  suffix: 'My App - '
+  suffix: '- My App '
 })
 ```
 
