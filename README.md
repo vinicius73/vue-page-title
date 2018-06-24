@@ -20,6 +20,13 @@ Vue.use(VuePageTitle, {
 })
 ```
 
+### Options
+
+Name | Type | Description
+---- | ---- | -----------
+suffix | String | suffix for the value of the page title tag
+prefix | String | prefix for the value of the page title tag
+
 ## Usage
 
 Just set the `title` option inside the component.  
