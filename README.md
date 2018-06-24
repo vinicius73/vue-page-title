@@ -1,6 +1,6 @@
 # Vue Page Title
 
-> Vue.js html/page title manager
+![Vue.js html/page title manager](cover.jpg)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/ac0ebf285e98487cce0c/maintainability)](https://codeclimate.com/github/vinicius73/vue-page-title/maintainability) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/build-status/master) [![Code Coverage](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/vinicius73/vue-page-title/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vinicius73/vue-page-title?targetFile=package.json)
 
