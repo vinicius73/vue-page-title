@@ -22,9 +22,10 @@
     "dist/*.js"
   ],
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text yarn run ava",
     "build": "rm -rf dist/ && rollup -c",
-    "build:demo": "cd demo && rollup -c --environment NODE_ENV:production,"
+    "build:demo": "cd demo && rollup -c --environment NODE_ENV:production,",
+    "test": "nyc --reporter=html --reporter=text yarn run ava",
+    "prepare": "yarn build"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
