@@ -7,7 +7,9 @@
 const setup = (setTitle, { router }) => {
   router.afterEach((to, from) => {
     const { meta } = to
-    if (meta.title) {
+
+    // if has meta and title
+    if (meta && meta.title) {
       setTitle(meta.title)
     }
   })
