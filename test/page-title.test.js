@@ -20,12 +20,27 @@ test('function title', t => {
     }
   }
 
+  const component2 = {
+    title () {
+      return this.name
+    },
+    data: () => ({ name: 'Archer' }),
+    render (h) {
+      return h('h1', this.$title)
+    }
+  }
+
   localVue.use(VuePageTitle)
 
   const wrapper = shallowMount(component, { localVue })
 
   t.is(wrapper.vm.$title, 'saber')
   t.is(wrapper.html(), '<h1>saber</h1>')
+
+  const wrapper2 = shallowMount(component2, { localVue })
+
+  t.is(wrapper2.vm.$title, 'Archer')
+  t.is(wrapper2.html(), '<h1>Archer</h1>')
 })
 
 test('shared title', t => {

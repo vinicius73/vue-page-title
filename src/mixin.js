@@ -7,7 +7,7 @@ const pageTitleMixin = {
     if (title !== undefined) {
       // allow use dinamic title system
       this.$title = isFunction(title)
-        ? title(this)
+        ? title.call(this, this)
         : title
     }
   }
