@@ -4,7 +4,8 @@ export default {
     file: 'app.web.js',
     format: 'iife',
     globals: {
-      vue: 'Vue'
+      vue: 'Vue',
+      'vue-router': 'VueRouter'
     }
   }
 }
