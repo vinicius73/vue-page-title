@@ -28,6 +28,7 @@ Name | Type | Description
 ---- | ---- | -----------
 suffix | String | suffix for the value of the page title tag
 prefix | String | prefix for the value of the page title tag
+router | [VueRouter instance](https://router.vuejs.org/api/#router-instance-properties) | if present, allows you to set the title via the route.
 
 ## Usage
 
@@ -78,4 +79,40 @@ This is an example using [vue-i18n](https://github.com/kazupon/vue-i18n).
 export default {
   title: ({ $t }) => $t('pages.clients.title')
 }
+```
+
+## Vue Router usage
+### Setup
+
+```js
+import Vue from 'vue'
+import VuePageTitle from 'vue-page-title'
+
+import router from 'path/to/application/router'
+
+Vue.use(VuePageTitle, { router })
+```
+
+```js
+// path/to/application/router
+import FooComponent from 'path/to/foo-component'
+import HomeComponent from 'path/to/home-component'
+
+const routes = [{
+  path: '/',
+  component: HomeComponent,
+  meta: {
+    title: 'Home Page' // Title must be a string.
+  }
+}, {
+  path: '/foo',
+  component: FooComponent,
+  meta: {
+    title: 'Foo Page'
+  }
+}]
+
+export default new VueRouter({
+  routes
+})
 ```
