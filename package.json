@@ -23,7 +23,6 @@
   ],
   "scripts": {
     "build": "rm -rf dist/ && rollup -c",
-    "build:demo": "cd demo && rollup -c --environment NODE_ENV:production,",
     "test": "nyc --reporter=clover ava",
     "test:coverage:html": "nyc --reporter=html --reporter=text ava --verbose",
     "prepare": "npm run-script build"
