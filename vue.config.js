@@ -1,7 +1,9 @@
 process.env.VUE_APP_VERSION = require('vue-page-title/package.json').version
 
 module.exports = {
-  // ...other vue-cli plugin options...
+  baseUrl: process.env.NODE_ENV === 'production'
+    ? '/vue-page-title/'
+    : '/',
   pwa: {
     name: '@vinicius73/vue-page-title',
     themeColor: '#4DBA87',
