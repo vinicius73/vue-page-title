@@ -8,15 +8,17 @@ export default {
   <nav class="tabs is-boxed is-large is-fullwidth is-black">
     <div class="container">
       <ul>
-        <li class="is-active">
-          <a>Home</a>
-        </li>
-        <li>
+        <router-link :to="{ name: 'get-started' }" tag="li">
           <a>Get Started</a>
-        </li>
-        <li>
+        </router-link>
+
+        <router-link :to="{ name: 'home' }" tag="li">
+          <a>Home</a>
+        </router-link>
+
+        <router-link :to="{ name: 'about' }" tag="li">
           <a>About</a>
-        </li>
+        </router-link>
       </ul>
     </div>
   </nav>
