@@ -1,5 +1,5 @@
 <script>
-import Hero from './components/hero.vue'
+const Hero = () => import(/* webpackChunkName: "hero" */ './components/hero.vue')
 import Navigation from './components/navigation.vue'
 
 export default {
