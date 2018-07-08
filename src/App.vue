@@ -3,7 +3,7 @@ import Hero from './components/hero.vue'
 import Navigation from './components/navigation.vue'
 
 export default {
-  name: 'root',
+  name: 'demo-root',
   components: { Hero, Navigation },
   title: 'Welcome to the home :)',
 }
@@ -12,9 +12,8 @@ export default {
 <template>
   <div id="app">
     <Hero>
-      <template slot-scope="footProps" slot="foot">
-        <Navigation  :color="footProps.color" />
-      </template>
+      <router-view />
+      <Navigation  slot="foot" />
     </Hero>
   </div>
 </template>

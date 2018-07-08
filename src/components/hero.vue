@@ -1,16 +1,12 @@
 <script>
-import InputTitle from './title-input.vue'
-import isEmpty from 'lodash/isEmpty'
 import GeoPattern from 'geopattern'
 import ColorJs from 'color-js'
+import hasTitleMixin from '../mixins/has-title'
 
 export default {
   name: 'hero',
-  components: { InputTitle },
+  mixins: [hasTitleMixin],
   computed: {
-    hasTitle () {
-      return !isEmpty(this.$title)
-    },
     heroPattern () {
       const pattern = GeoPattern
         .generate(this.$title)
@@ -39,12 +35,7 @@ export default {
 <template>
   <section class="hero is-fullheight is-bold" :style="heroStyle" :class="hasTitle ? '' : 'is-danger'">
     <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          {{ hasTitle ? $title : ':( no title' }}
-        </h1>
-        <InputTitle />
-      </div>
+      <slot />
     </div>
     <div class="hero-foot">
       <slot :color="colors.baseColor" name="foot"></slot>
@@ -52,7 +43,7 @@ export default {
   </section>
 </template>
 
-<style scoped>
+<style>
 .title {
   color: inherit !important;
 }

@@ -1,17 +1,6 @@
 <script>
-import ColorJs from 'color-js'
-
 export default {
-  props: ['color'],
-  computed: {
-    textColor () {
-      const color = ColorJs(this.color)
-
-      return (color.getLightness() < 0.5)
-        ? color.lightenByRatio(95)
-        : color.darkenByRatio(95)
-    }
-  }
+  name: 'page-navigation'
 }
 </script>
 
