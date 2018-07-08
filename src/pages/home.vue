@@ -1,6 +1,6 @@
 <script>
 import InputTitle from '../components/title-input.vue'
-import hasTitleMixin from '../mixins/has-title'
+import hasTitleMixin from '../support/mixins/has-title'
 
 export default {
   name: 'home',
