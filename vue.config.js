@@ -1,3 +1,5 @@
+process.env.VUE_APP_VERSION = require('vue-page-title/package.json').version
+
 module.exports = {
   // ...other vue-cli plugin options...
   pwa: {
