@@ -1,17 +1,21 @@
 <script>
-import InputTitle from './components/title-input.vue'
+import Hero from './components/hero.vue'
+import Navigation from './components/navigation.vue'
 
 export default {
   name: 'root',
-  components: { InputTitle }
+  components: { Hero, Navigation },
+  title: 'Welcome to the home :)',
 }
 </script>
 
 <template>
-  <div id="app" class="container">
-    <div>
-      <InputTitle />
-    </div>
+  <div id="app">
+    <Hero>
+      <template slot-scope="footProps" slot="foot">
+        <Navigation  :color="footProps.color" />
+      </template>
+    </Hero>
   </div>
 </template>
 
