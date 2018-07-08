@@ -4,6 +4,7 @@ import hasTitleMixin from '../support/mixins/has-title'
 
 export default {
   name: 'home',
+  title: 'Welcome to the home :)',
   mixins: [hasTitleMixin],
   components: { InputTitle }
 }

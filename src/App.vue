@@ -4,8 +4,7 @@ import Navigation from './components/navigation.vue'
 
 export default {
   name: 'demo-root',
-  components: { Hero, Navigation },
-  title: 'Welcome to the home :)',
+  components: { Hero, Navigation }
 }
 </script>
 
