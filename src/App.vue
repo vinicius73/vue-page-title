@@ -18,7 +18,7 @@ export default {
       ? 'sw-on'
       : 'sw-off'
 
-    console.log(
+    console.log( // eslint-disable-line no-console
       `%c ${companyName}/${appName} %c v${version} %c ${mode}/${sw} %c`,
       'background:#000 ; padding: 3px; border-radius: 3px 0 0 3px;  color: #fff',
       'background:#0a88c2 ; padding: 3px; border-radius: 0 0 0 0;  color: #fff',
