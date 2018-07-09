@@ -19,9 +19,9 @@ export default {
             <strong>Vinicius Reis</strong>
             <small><a href="https://github.com/vinicius73">@vinicius73</a></small>
             <br>
-            I am Full-Stack Severino-Developer, married and father a beautiful daughter.
-            I like movies, books, manga, comics, games...
-            That is, I like more things than I have time to do them.
+            I am Full-Stack Severino-Developer, married and father a beautiful daughter. <br>
+            I like movies, books, manga, comics, games... <br>
+            That is, I like more things than I have time to do them. <br>
             I record videos for <a href="https://www.youtube.com/channel/UCTluPqMkm90zyw6mCde561A">CodeCasts</a> and work on <a href="https://decision6.com">Decision6</a> as an Application Engineer.
           </p>
         </div>
