@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV === 'production') {
+  require('./register-service-worker')
+}
+
 import Vue from 'vue'
 import App from './App.vue'
 import VuePageTitle from 'vue-page-title'

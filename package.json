@@ -19,6 +19,7 @@
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
     "lodash": "^4.17.10",
+    "register-service-worker": "^1.4.1",
     "vue": "^2.5.16",
     "vue-apollo": "^3.0.0-beta.19",
     "vue-page-title": "^1.1.3",
