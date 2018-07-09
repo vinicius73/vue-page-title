@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <nav class="tabs is-boxed is-large is-fullwidth is-black">
+  <nav class="tabs is-boxed is-fullwidth is-black">
     <div class="container">
       <ul>
         <li>

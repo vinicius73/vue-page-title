@@ -4,7 +4,7 @@ import hasTitleMixin from '../support/mixins/has-title'
 
 export default {
   name: 'home',
-  title: 'Welcome to the home :)',
+  title: 'Welcome to vue-page-title demo!!!',
   mixins: [hasTitleMixin],
   components: { InputTitle }
 }

@@ -1,9 +1,9 @@
 <template>
   <div class="box">
-    <article class="media">
+    <article class="media is-block-touch">
       <div class="media-left">
         <figure class="image is-120x120">
-          <img src="//gravatar.com/avatar/f803c45d62a468e0cb990398c004bd3e?s=200" alt="Image">
+          <img :src="$options.avatar" alt="Image">
         </figure>
       </div>
       <div class="media-content">
@@ -20,19 +20,19 @@
         </div>
         <nav class="level is-mobile">
           <div class="level-left">
-            <a class="level-item" aria-label="reply">
+            <a class="level-item" aria-label="twitter" target="_blank" href="https://twitter.com/luizvinicius73">
               <span class="icon is-small">
-                <i class="fas fa-reply" aria-hidden="true"></i>
+                <i class="fab fa-twitter" aria-hidden="true"></i>
               </span>
             </a>
-            <a class="level-item" aria-label="retweet">
+            <a class="level-item" aria-label="github" target="_blank" href="https://github.com/vinicius73">
               <span class="icon is-small">
-                <i class="fas fa-retweet" aria-hidden="true"></i>
+                <i class="fab fa-github" aria-hidden="true"></i>
               </span>
             </a>
-            <a class="level-item" aria-label="like">
+            <a class="level-item" aria-label="youtube" target="_blank" href="https://www.youtube.com/channel/UCTluPqMkm90zyw6mCde561A">
               <span class="icon is-small">
-                <i class="fas fa-heart" aria-hidden="true"></i>
+                <i class="fab fa-youtube" aria-hidden="true"></i>
               </span>
             </a>
           </div>
@@ -44,8 +44,16 @@
 
 <script>
 export default {
+  name: 'me',
+  avatar: process.env.VUE_APP_AVATAR
 }
 </script>
 
-<style lang="css">
+<style>
+  @media screen and (max-width: 1023px) {
+    .media-left {
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  }
 </style>
