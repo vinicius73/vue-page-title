@@ -41,7 +41,7 @@ export default {
       </span>
     </div>
     <ul v-else>
-      <li v-for="row in projects">
+      <li v-for="row in projects" :key="row.id">
         <div class="buttons has-addons">
           <router-link :to="{ name: 'project', params: {id: row.id} }" class="button is-dark">
             {{ row.name }}
