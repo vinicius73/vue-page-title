@@ -1,4 +1,6 @@
-process.env.VUE_APP_VERSION = require('vue-page-title/package.json').version
+const version = require('vue-page-title/package.json').version
+const now = Math.round(Date.now() / 6000).toString(36)
+process.env.VUE_APP_VERSION = `${version}-${now}`
 
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
