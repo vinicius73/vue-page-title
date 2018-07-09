@@ -1,3 +1,10 @@
+<script>
+export default {
+  name: 'me',
+  avatar: process.env.VUE_APP_AVATAR
+}
+</script>
+
 <template>
   <div class="box">
     <article class="media is-block-touch">
@@ -41,13 +48,6 @@
     </article>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'me',
-  avatar: process.env.VUE_APP_AVATAR
-}
-</script>
 
 <style>
   @media screen and (max-width: 1023px) {
