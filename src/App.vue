@@ -1,10 +1,11 @@
 <script>
 const Hero = () => import(/* webpackChunkName: "hero" */ './components/hero.vue')
 import Navigation from './components/navigation.vue'
+import GithubCorner from './components/github-corner.vue'
 
 export default {
   name: 'demo-root',
-  components: { Hero, Navigation },
+  components: { Hero, Navigation, GithubCorner },
   created () {
     const appName = 'vue-page-title'
     const companyName = '@vinicius73'
@@ -32,6 +33,7 @@ export default {
 <template>
   <div id="app">
     <Hero>
+      <GithubCorner />
       <router-view />
       <Navigation  slot="foot" />
     </Hero>
