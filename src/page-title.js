@@ -1,4 +1,4 @@
-import { buildPageTitle, safeString } from './utils'
+import { buildPageTitle, safeString, isFunction } from './utils'
 
 /**
  * if use ssr document is not available
@@ -24,7 +24,16 @@ const setPageTitle = (value, options) => {
 
   // test if title is empty
   if (safeString(value).length > 0) {
-    document.title = buildPageTitle(value, options)
+    const { setTitleMethod } = options
+    const title = buildPageTitle(value, options)
+
+    // use custom setTitle method
+    if (setTitleMethod && isFunction(setTitleMethod)) {
+      setTitleMethod(title)
+      return
+    }
+
+    document.title = title
   }
 }
 

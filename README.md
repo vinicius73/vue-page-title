@@ -29,6 +29,7 @@ Name | Type | Description
 suffix | String | suffix for the value of the page title tag
 prefix | String | prefix for the value of the page title tag
 router | [VueRouter instance](https://router.vuejs.org/api/#router-instance-properties) | if present, allows you to set the title via the route.
+setTitleMethod | Function | custom method of setting title
 
 ## Usage
 
