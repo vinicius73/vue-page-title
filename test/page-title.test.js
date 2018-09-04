@@ -114,3 +114,22 @@ test('change title', t => {
   t.is(wrapper.vm.$title, undefined)
   t.is(wrapper.html(), '<h1></h1>')
 })
+
+test('setTitleMethod', t => {
+  const localVue = createLocalVue()
+
+  const component = {
+    title: 'Berserker',
+    render (h) {
+      return h('h1', this.$title)
+    }
+  }
+
+  localVue.use(VuePageTitle, {
+    setTitleMethod: title => {
+      t.is('Berserker', title)
+    }
+  })
+
+  shallowMount(component, { localVue })
+})
