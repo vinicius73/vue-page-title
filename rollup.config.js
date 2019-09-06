@@ -16,7 +16,6 @@ export default {
     banner,
     exports: 'named',
     name: 'VuePageTitle',
-    file: `index.${format}.js`,
-    dir: 'dist'
+    file: `dist/index.${format}.js`
   }))
 }

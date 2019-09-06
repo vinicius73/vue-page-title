@@ -28,29 +28,33 @@
     "prepare": "npm run-script build"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "@vue/test-utils": "^1.0.0-beta.24",
-    "ava": "^0.25.0",
+    "@babel/core": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "ava": "^2.3.0",
     "babel-preset-env": "^1.7.0",
-    "browser-env": "^3.2.5",
-    "eslint": "^5.5.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-standard": "^4.0.0",
-    "nyc": "^13.0.1",
+    "browser-env": "^3.2.6",
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nyc": "^14.1.1",
     "require-extension-hooks": "^0.3.3",
-    "require-extension-hooks-vue": "^1.1.0",
-    "rollup": "^0.65.0",
-    "vue": "^2.5.17"
+    "require-extension-hooks-vue": "^3.0.0",
+    "rollup": "^1.20.3",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
   },
   "engines": {
     "node": ">= 8.10.0",
     "npm": ">= 5.10.0"
   },
   "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ],
     "require": [
       "@babel/register",
       "./test/helpers/setup.js"
