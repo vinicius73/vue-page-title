@@ -43,7 +43,7 @@ test('function title', t => {
   t.is(wrapper2.html(), '<h1>Archer</h1>')
 })
 
-test('shared title', t => {
+test('shared title', async t => {
   const localVue = createLocalVue()
 
   const component1 = {
@@ -69,13 +69,15 @@ test('shared title', t => {
 
   const wrapper2 = shallowMount(component2, { localVue })
 
+  await localVue.nextTick()
+
   t.is(wrapper1.vm.$title, 'archer')
   t.is(wrapper1.html(), '<h1>archer</h1>')
   t.is(wrapper2.vm.$title, 'archer')
   t.is(wrapper2.html(), '<h2>archer</h2>')
 })
 
-test('change title', t => {
+test('change title', async t => {
   const localVue = createLocalVue()
 
   const component = {
@@ -96,20 +98,28 @@ test('change title', t => {
 
   wrapper.vm.setTitle('Lancer')
 
+  await localVue.nextTick()
+
   t.is(wrapper.vm.$title, 'Lancer')
   t.is(wrapper.html(), '<h1>Lancer</h1>')
 
   wrapper.vm.$title = 'Assassin'
+
+  await localVue.nextTick()
 
   t.is(wrapper.vm.$title, 'Assassin')
   t.is(wrapper.html(), '<h1>Assassin</h1>')
 
   wrapper.vm.$title = ''
 
+  await localVue.nextTick()
+
   t.is(wrapper.vm.$title, '')
   t.is(wrapper.html(), '<h1></h1>')
 
   wrapper.vm.$title = undefined
+
+  await localVue.nextTick()
 
   t.is(wrapper.vm.$title, undefined)
   t.is(wrapper.html(), '<h1></h1>')
