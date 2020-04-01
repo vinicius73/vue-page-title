@@ -1,8 +1,20 @@
+checks:
+    javascript: true
+
+filter:
+  paths: ["src/*"]
+  excluded_paths:
+    - test/*
+
 build:
-    tests:
-        override:
-            -
-                command: 'npm test'
-                coverage:
-                    file: 'coverage/clover.xml'
-                    format: 'clover'
+  environment:
+    node:
+      version: v12.16.1
+
+  tests:
+    override:
+      -
+        command: 'npm test'
+        coverage:
+          file: 'coverage/clover.xml'
+          format: 'clover'
