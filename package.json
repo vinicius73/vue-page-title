@@ -22,13 +22,14 @@
     "dist/*.js"
   ],
   "scripts": {
-    "build": "rm -rf dist/ && rollup -c",
+    "build": "rm -rf dist/ && rollup -c && USE_BABEL=yes rollup -c",
     "test": "nyc --reporter=clover ava",
     "test:coverage:html": "nyc --reporter=html --reporter=text ava --verbose",
     "prepare": "npm run-script build"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
     "@vue/test-utils": "^1.0.0-beta.32",
     "ava": "^3.5.2",
@@ -44,6 +45,7 @@
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-vue": "^3.0.0",
     "rollup": "^2.3.2",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^5.3.0",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"

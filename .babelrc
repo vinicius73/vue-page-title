@@ -1,6 +1,0 @@
-{
-  "ignore": ["node_modules/**"],
-  "presets": [
-    ["env", { "targets": { "node": "8.11.2" } }]
-  ]
-}
