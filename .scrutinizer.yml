@@ -9,7 +9,7 @@ filter:
 build:
   environment:
     node:
-      version: v12.16.1
+      version: v16.10.0
 
   tests:
     override:
