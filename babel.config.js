@@ -4,10 +4,12 @@ module.exports = {
   presets: [
     [
       '@babel/preset-env',
-      isTest ? {
-        corejs: '2',
-        useBuiltIns: 'usage'
-      } : {}
+      isTest
+        ? {
+            corejs: '2',
+            useBuiltIns: 'usage'
+          }
+        : {}
     ]
   ]
 }
