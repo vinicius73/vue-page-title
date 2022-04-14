@@ -1,4 +1,4 @@
-const babel = require('rollup-plugin-babel')
+const { babel } = require('@rollup/plugin-babel')
 const { terser } = require('rollup-plugin-terser')
 const pkg = require('./package.json')
 
@@ -10,7 +10,8 @@ const yearString = (year === 2018) ? '2018' : `2018-${year}`
 
 const plugins = [
   useBabel && babel({
-    exclude: 'node_modules/**'
+    exclude: 'node_modules/**',
+    babelHelpers: 'bundled'
   })
 ].filter(Boolean)
 
