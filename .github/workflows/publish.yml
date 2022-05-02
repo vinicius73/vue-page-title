@@ -33,6 +33,10 @@ jobs:
         with:
           registry-url: 'https://npm.pkg.github.com'
 
+      - name: 💩 Change package name
+        run: |
+          node -e "let pkg=require('./package.json'); pkg.name='@vinicius73/' + pkg.name; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
+
       - name: 📦 Publish package on GPR
         run: npm publish
         env:
