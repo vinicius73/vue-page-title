@@ -9,12 +9,12 @@ filter:
 build:
   environment:
     node:
-      version: v16.10.0
+      version: v16
 
   tests:
     override:
       -
-        command: 'npm test'
+        command: 'yarn install && yarn run test'
         coverage:
           file: 'coverage/clover.xml'
           format: 'clover'
