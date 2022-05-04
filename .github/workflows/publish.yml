@@ -1,8 +1,9 @@
-name: Publish to NPM
+name: Publish package
 on:
   push:
     tags:
       - v*
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,34 +11,76 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: 🪄 Read package.json node and npm engines version
+        uses: skjnldsv/read-package-engines-version-actions@v1.2
+        id: versions
+        with:
+          fallbackNode: '^16'
+          fallbackNpm: '^8'
+
+      - name: 🔧 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ steps.versions.outputs.nodeVersion }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies & build
+        run: |
+          yarn install --immutable
+          yarn run build
+
+      - name: 📥​ Store dist artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
+
+  npm:
+    runs-on: ubuntu-latest
+    needs: build
+    name: NPM Publish
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: 📤​ Download dist artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+
+      - name: 🔧 Setup Node and NPM
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 🔧 Install dependencies
-        run: yarn install
-
-      - name: 🔧 Build
-        run: yarn build
-
-      - name: 📦 Publish package on NPM
+      - name: 📣 Publish package
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Setup Node
+  gpr:
+    runs-on: ubuntu-latest
+    needs: build
+    name: GPR Publish
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: 📤​ Download dist artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+
+      - name: 🔧 Setup Node and GPR
         uses: actions/setup-node@v3
         with:
+          node-version: 16
+          cache: 'npm'
           registry-url: 'https://npm.pkg.github.com'
 
-      - name: 💩 Change package name
-        run: |
-          node -e "let pkg=require('./package.json'); pkg.name='@vinicius73/' + pkg.name; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
-
-      - name: 📦 Publish package on GPR
+      - name: 📣 Publish package
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
