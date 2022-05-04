@@ -1,6 +1,6 @@
 {
   "name": "vue-page-title",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Vue.js html/page title manager",
   "repository": "https://github.com/vinicius73/vue-page-title",
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
@@ -23,8 +23,7 @@
   "scripts": {
     "build": "rm -rf dist/ && rollup -c && USE_BABEL=yes rollup -c",
     "test": "nyc --reporter=clover ava",
-    "test:coverage:html": "nyc --reporter=html --reporter=text ava --verbose",
-    "prepare": "npm run-script build"
+    "test:coverage:html": "nyc --reporter=html --reporter=text ava --verbose"
   },
   "peerDependencies": {
     "vue": "^2"
