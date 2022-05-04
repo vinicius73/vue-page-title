@@ -1,4 +1,4 @@
-name: Publish to NPM
+name: Publish package
 on:
   push:
     tags:
@@ -7,28 +7,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: 📥​ Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: 🪄 Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 🔧 Install dependencies
-        run: yarn install
+      - name: 📦 Install dependencies & build
+        run: |
+          yarn install
+          yarn run build
 
-      - name: 🔧 Build
-        run: yarn build
-
-      - name: 📦 Publish package on NPM
+      - name: 📣 Publish package on NPM
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Setup Node
+      - name: 🪄 Setup Node
         uses: actions/setup-node@v3
         with:
           registry-url: 'https://npm.pkg.github.com'
@@ -37,7 +36,7 @@ jobs:
         run: |
           node -e "let pkg=require('./package.json'); pkg.name='@vinicius73/' + pkg.name; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
 
-      - name: 📦 Publish package on GPR
+      - name: 📣 Publish package on GPR
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
