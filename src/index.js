@@ -1,6 +1,7 @@
 import mixin from './mixin'
 import { setPageTitle } from './page-title'
 import { setup as setupRouter } from './router'
+import {safeString} from './utils'
 
 const install = (Vue, options = {}) => {
   // prevent double install
@@ -10,7 +11,9 @@ const install = (Vue, options = {}) => {
 
   // title state
   const $page = {
-    title: ''
+    title: '',
+    prefix: safeString(options.prefix),
+    suffix: safeString(options.suffix)
   }
 
   const setTitle = value => {
@@ -18,18 +21,40 @@ const install = (Vue, options = {}) => {
     $page.title = value
   }
 
-  // make reactive title
-  Vue.util.defineReactive($page, 'title', '')
+  const setPrefix = value => {
+    options.prefix = value
+    setTitle($page.title)
+  }
 
-  // add title to component context
+  const setSuffix = value => {
+    options.suffix = value
+    setTitle($page.title)
+  }
+
+  // make reactive title properties
+  Vue.util.defineReactive($page, 'title', '')
+  Vue.util.defineReactive($page, 'prefix', '')
+  Vue.util.defineReactive($page, 'suffix', '')
+
+  // add title elements to component context
   Object.defineProperty(Vue.prototype, '$title', {
     get: () => $page.title,
     set: value => setTitle(value)
   })
 
+  Object.defineProperty(Vue.prototype, '$titlePrefix', {
+    get: () => $page.prefix,
+    set: value => setPrefix(value)
+  })
+
+  Object.defineProperty(Vue.prototype, '$titleSuffix', {
+    get: () => $page.suffix,
+    set: value => setSuffix(value)
+  })
+
   // vue router support
   if (options.router) {
-    setupRouter(setTitle, options)
+    setupRouter(setTitle, setPrefix, setSuffix, options)
   }
 
   // add global mixin
