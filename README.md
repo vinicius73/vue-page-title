@@ -117,3 +117,15 @@ export default new VueRouter({
   routes
 })
 ```
+
+### Watching routes
+
+```javascript
+<script>
+export default {
+  title () {
+    return `My title is: ${this.$route.query.foo}`
+  }
+}
+</script>
+```
