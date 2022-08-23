@@ -7431,11 +7431,19 @@ __metadata:
     rollup: ^2.71.1
     rollup-plugin-terser: ^7.0.2
     vue: ^2.6.14
+    vue-router: ^3.6.0
     vue-template-compiler: ^2.6.14
   peerDependencies:
     vue: ^2
   languageName: unknown
   linkType: soft
+
+"vue-router@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "vue-router@npm:3.6.0"
+  checksum: c9d95d507e02226f4387c565942813d1e360e34144149e46be791b887d3601b356757ab9b2a16d52e2dd43754f34510e1df5fb93f0f9ef77af9eb75eca16974c
+  languageName: node
+  linkType: hard
 
 "vue-template-compiler@npm:^2.6.14":
   version: 2.6.14
