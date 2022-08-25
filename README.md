@@ -58,6 +58,35 @@ export default {
 </template>
 ```
 
+Or better, watch the title react:
+```vue
+<script>
+export default {
+  title: ctx => ctx.title,
+  data () {
+    return {
+      title: 'Start'
+    }
+  }
+  mounted () {
+    const servantTypes = [
+      'Ruler', 'Saber', 'Archer', 'Lancer', 'Rider', 'Caster', 'Berserker', 'Assassin'
+    ]
+    this.$interval = setInterval(() => {
+      this.title = servantTypes[Math.floor(Math.random() * servantTypes.length)]
+    }, 2000)
+  },
+  beforeDestroy () {
+    clearInterval(this.$interval)
+  }
+}
+</script>
+
+<template>
+  <div>{{ $title }}</div>
+</template>
+```
+
 It is also possible to generate a title dynamically, using a function. It receives as an argument the component instance.
 
 ```js
