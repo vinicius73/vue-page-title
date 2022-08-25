@@ -1,27 +1,32 @@
 import { isFunction } from './utils'
 
+const unwatch = Symbol('title:unwatch')
+
 const pageTitleMixin = {
   created () {
-    this.setPageTitle()
-  },
-  watch: {
-    '$route.params' () {
-      this.setPageTitle()
-    },
-    '$route.query' () {
-      this.setPageTitle()
+    const { title } = this.$options
+
+    if (title === undefined) {
+      return
     }
+
+    // allow use dinamic title system
+    if (isFunction(title)) {
+      this[unwatch] = this.$watch(
+        () => title.call(this, this),
+        val => {
+          this.$title = val
+        },
+        { immediate: true }
+      )
+      return
+    }
+
+    this.$title = title
   },
-  methods: {
-    setPageTitle () {
-      const { title } = this.$options
-
-      if (title === undefined) {
-        return
-      }
-
-      // allow use dinamic title system
-      this.$title = isFunction(title) ? title.call(this, this) : title
+  beforeDestroy () {
+    if (this[unwatch]) {
+      this[unwatch]()
     }
   }
 }
