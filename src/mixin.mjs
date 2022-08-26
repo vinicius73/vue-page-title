@@ -1,4 +1,4 @@
-import { isFunction } from './utils'
+import { isFunction } from './utils.mjs'
 
 const unwatch = Symbol('title:unwatch')
 

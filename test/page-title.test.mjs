@@ -1,4 +1,4 @@
-import VuePageTitle from '../src/index'
+import VuePageTitle from '../src/index.mjs'
 
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 import test from 'ava'

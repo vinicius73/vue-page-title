@@ -1,6 +1,6 @@
-import mixin from './mixin'
-import { setPageTitle } from './page-title'
-import { setup as setupRouter } from './router'
+import mixin from './mixin.mjs'
+import { setPageTitle } from './page-title.mjs'
+import { setup as setupRouter } from './router.mjs'
 
 const install = (Vue, options = {}) => {
   // prevent double install

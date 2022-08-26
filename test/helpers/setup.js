@@ -1,7 +1,8 @@
-const hooks = require('require-extension-hooks')
+import hooks from 'require-extension-hooks'
+import browserEnv from 'browser-env'
 
 // Setup browser environment
-require('browser-env')()
+browserEnv()
 
 // Setup vue files to be processed by `require-extension-hooks-vue`
 hooks('vue').plugin('vue').push()

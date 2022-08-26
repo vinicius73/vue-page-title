@@ -5,6 +5,7 @@
   "repository": "https://github.com/vinicius73/vue-page-title",
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "keywords": [
     "vue",
     "head",
@@ -51,17 +52,8 @@
     "vue-template-compiler": "^2.7.10"
   },
   "engines": {
-    "node": ">= 12.16.0",
-    "npm": ">= 6.13.0"
-  },
-  "ava": {
-    "files": [
-      "test/**/*.test.js"
-    ],
-    "require": [
-      "@babel/register",
-      "./test/helpers/setup.js"
-    ]
+    "node": ">= 14",
+    "npm": ">= 8"
   },
   "packageManager": "yarn@3.2.0"
 }

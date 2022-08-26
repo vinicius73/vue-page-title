@@ -1,4 +1,4 @@
-import { buildPageTitle, safeString, isFunction } from './utils'
+import { buildPageTitle, safeString, isFunction } from './utils.mjs'
 
 /**
  * if use ssr document is not available

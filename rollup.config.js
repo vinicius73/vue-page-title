@@ -16,7 +16,7 @@ const banner = `/*! ${pkg.name} v${pkg.version}
  */
 `
 export default {
-  input: 'src/index.js',
+  input: 'src/index.mjs',
   plugins,
   output: formats.flatMap(format => {
     return [{
