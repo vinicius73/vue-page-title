@@ -5,8 +5,10 @@ export interface TitleOptions {
   suffix?: string;
 }
 
+export type SetTitleFn = (val: string) => void
+
 export interface SetTitleOptions extends TitleOptions {
-  setTitleMethod?(value: string): void;
+  setTitleMethod?: SetTitleFn
 }
 
 export interface PageTitleOptions extends SetTitleOptions {

@@ -17,9 +17,8 @@ const buildPageTitle = (value?: string, options: TitleOptions = {}) => {
 
 const setPageTitle = (value: string, options: SetTitleOptions) => {
   // test if not is a browser
-  /* istanbul ignore next: SSR */
   if (!isBrowser()) {
-    console.warn("vuepage-title: no browser enviroment");
+    console.warn("vue-page-title: no browser enviroment");
     return;
   }
 

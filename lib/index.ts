@@ -2,6 +2,7 @@ import type { App, Plugin } from 'vue'
 import type { PageTitleOptions } from "./types";
 import { ref } from 'vue'
 import { setPageTitle } from "./page-title";
+import { setupRouter } from './router'
 import { PAGE_TITLE, SET_PAGE_TITLE } from './injection-keys'
 
 export * from './composable'
@@ -26,6 +27,10 @@ const pageTitle = (options: PageTitleOptions = {}): Plugin => {
   };
 
   const installedApps = new WeakSet<App>();
+
+  if (options.router) {
+    setupRouter(options.router, setTitle);
+  }
 
   const install = (app: App) => {
     // prevent double install
