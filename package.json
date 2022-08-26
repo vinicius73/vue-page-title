@@ -6,6 +6,7 @@
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "sideEffects": false,
   "keywords": [
     "vue",
     "head",
@@ -18,34 +19,19 @@
   "unpkg": "dist/index.iife.min.js",
   "jsdelivr": "dist/index.iife.min.js",
   "files": [
-    "src",
-    "dist/**/*.js"
+    "dist/**/*"
   ],
   "scripts": {
-    "build": "rm -rf dist/ && rollup -c",
-    "test": "nyc --reporter=clover ava",
-    "test:coverage:html": "nyc --reporter=html --reporter=text ava --verbose"
-  },
-  "peerDependencies": {
-    "vue": "^2"
+    "build": "vite build && yarn build:tsc",
+    "build:tsc": "tsc lib/index.ts --declaration --emitDeclarationOnly --lib es2022,DOM --outDir dist "
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.3.0",
-    "ava": "^4.3.3",
-    "browser-env": "^3.3.0",
-    "eslint": "^8.22.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.1",
-    "nyc": "^15.1.0",
-    "require-extension-hooks": "^0.3.3",
-    "require-extension-hooks-vue": "^3.0.0",
-    "rollup": "^2.78.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "vue": "^2.7.10",
-    "vue-router": "^3.6.4",
-    "vue-template-compiler": "^2.7.10"
+    "@vitejs/plugin-vue": "^3.0.3",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.5",
+    "vue-tsc": "^0.40.1"
   },
   "engines": {
     "node": ">= 14",
