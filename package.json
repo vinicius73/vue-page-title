@@ -23,10 +23,15 @@
   ],
   "scripts": {
     "build": "vite build && yarn build:tsc",
-    "build:tsc": "tsc lib/index.ts --declaration --emitDeclarationOnly --lib es2022,DOM --outDir dist "
+    "build:tsc": "tsc lib/index.ts --declaration --emitDeclarationOnly --lib es2022,DOM --outDir dist ",
+    "dev": "vite dev"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",
+    "mini-svg-data-uri": "^1.4.4",
+    "radash": "^7.0.0",
+    "reseter.css": "^2.0.0",
+    "trianglify": "^4.1.1",
     "typescript": "^4.8.2",
     "vite": "^3.0.9",
     "vue": "^3.2.37",

@@ -20,8 +20,6 @@ const pageTitle = (options: PageTitleOptions = {}): Plugin => {
   const $title = ref<string>("");
 
   const setTitle = (val: string): void => {
-    console.log({ options });
-
     setPageTitle(val, options);
     $title.value = val;
   };

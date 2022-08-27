@@ -1,4 +1,4 @@
-import { ComputedRef, ComputedGetter, WatchSource, Ref } from "vue";
+import { ComputedRef, ComputedGetter, WatchSource } from "vue";
 import { inject, computed, ref, watch } from "vue";
 import { PAGE_TITLE, SET_PAGE_TITLE } from './injection-keys'
 
@@ -15,7 +15,7 @@ const useTitle = (initial?: initialValue) => {
   if (typeof initial === 'string') {
     setTitle(initial)
   } else if (initial != null) {
-    watch(initial, setTitle)
+    watch(initial, setTitle, { immediate: true })
   }
 
   return {
