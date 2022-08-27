@@ -16,10 +16,10 @@
   "include": [
     "lib/**/*.ts",
     "lib/**/*.d.ts",
-    "doc/**/*.ts",
-    "doc/**/*.d.ts",
-    "doc/**/*.tsx",
-    "doc/**/*.vue",
+    "example/**/*.ts",
+    "example/**/*.d.ts",
+    "example/**/*.tsx",
+    "example/**/*.vue",
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -57,9 +57,12 @@ export default defineComponent({
 
 <template>
   <label class="title-input">
+    <small>
+      Type a new page title
+    </small>
     <input @input="stopRefresh" type="text" v-model="model" />
 
-    <span>
+    <span title="Reactive title">
       {{ title }}
     </span>
   </label>
@@ -86,5 +89,12 @@ export default defineComponent({
   display: block;
   font-family: monospace;
   text-shadow: -1px -1px 1em #fff;
+}
+
+.title-input small {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  color: #4e4d4d;
 }
 </style>

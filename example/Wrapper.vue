@@ -55,8 +55,8 @@ export default defineComponent({
 </style>
 
 <style>
-html, body, #wrapper, #app {
-  height: 100%;
+body {
+  min-height: 100vh;
   padding: 0;
 }
 </style>

@@ -11,6 +11,7 @@ app.use(router);
 
 app.use(pageTitle({
   suffix: '- Vue Page Title',
+  mixin: true,
   router
 }));
 
