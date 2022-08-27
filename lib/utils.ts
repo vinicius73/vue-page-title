@@ -1,8 +1,8 @@
 
 /**
- * test if object is a function
+ * test if val is a function
  */
-const isFunction = (object: unknown): boolean => typeof object === "function";
+const isFunction = (val: unknown): val is Function => typeof val === "function";
 
 /**
  * prevent output undefined
