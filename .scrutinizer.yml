@@ -2,7 +2,7 @@ checks:
     javascript: true
 
 filter:
-  paths: ["src/*"]
+  paths: ["lib/*"]
   excluded_paths:
     - test/*
 

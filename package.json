@@ -1,6 +1,6 @@
 {
   "name": "vue-page-title",
-  "version": "1.3.0",
+  "version": "2.0.0-beta",
   "description": "Vue.js html/page title manager",
   "repository": "https://github.com/vinicius73/vue-page-title",
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
@@ -19,14 +19,28 @@
   "unpkg": "dist/index.iife.min.js",
   "jsdelivr": "dist/index.iife.min.js",
   "files": [
-    "dist/**/*"
+    "dist"
   ],
   "scripts": {
-    "build": "vite build && yarn build:tsc",
+    "build": "vite build && yarn run build:minify && yarn build:tsc",
+    "build:minify": "MINIFY=yes vite build",
     "build:tsc": "tsc lib/index.ts --declaration --emitDeclarationOnly --lib es2022,DOM --outDir dist ",
+    "prepack": "yarn run build",
     "dev": "vite dev",
     "test": "vitest run",
     "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "vue": "^3.2",
+    "vue-router": "^4.1"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": false
+    },
+    "vue-router": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",
@@ -39,10 +53,11 @@
     "trianglify": "^4.1.1",
     "typescript": "^4.8.2",
     "vite": "^3.0.9",
+    "vite-plugin-banner": "^0.4.0",
     "vitest": "^0.22.1",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5",
-    "vue-tsc": "^0.40.1"
+    "vue-tsc": "^0.40.2"
   },
   "engines": {
     "node": ">= 14",
