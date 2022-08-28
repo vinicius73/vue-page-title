@@ -13,38 +13,55 @@ yarn add vue-page-title # npm i vue-page-title
 ## Setup
 
 ```js
-import Vue from 'vue'
-import VuePageTitle from 'vue-page-title'
+import { createApp } from 'vue'
+import { pageTitle } from 'vue-page-title'
 
-Vue.use(VuePageTitle, {
-  // prefix: 'My App - ',
-  suffix: '- My App '
-})
+const app = createApp(Root)
+
+app.use(pageTitle({
+  suffix: '- Vue Page Title',
+  mixin: true.
+}));
 ```
 
 ### Options
 
 Name | Type | Description
 ---- | ---- | -----------
-suffix | String | suffix for the value of the page title tag
-prefix | String | prefix for the value of the page title tag
+suffix | `String` |  suffix for the value of the page title tag
+prefix | `String` | prefix for the value of the page title tag
+mixin | `Boolean` | if true, enable plugin mixin in the components
 router | [VueRouter instance](https://router.vuejs.org/api/#router-instance-properties) | if present, allows you to set the title via the route.
-setTitleMethod | Function | custom method of setting title
+setTitleMethod | `Function` | custom method of setting title
 
 ## Usage
 
-Just set the `title` option inside the component.  
-Within the component it is still possible to update the `$title` state, it is also available to be used within the component template.
+### Mixin
+
+With the mixin option enabled, just set the `title` option inside the component.  
+Within the component it is still possible to update the `$title` state using `$setPageTitle` function, it is also available to be used within the component template.
+
 ```vue
 <script>
+const CREW = [
+  'Monkey D. Luffy', 
+  'Roronoa Zoro', 
+  'Nami', 
+  'Usopp', 
+  'Sanji', 
+  'Tony Tony Chopper', 
+  'Nico Robin', 
+  'Franky', 
+  'Brook', 
+  'Jinbe', 
+  'Nefertari Vivi'
+]
+
 export default {
-  title: 'Page title',
+  title: 'Mugiwara no Ichimi',
   mounted () {
-    const servantTypes = [
-      'Ruler', 'Saber', 'Archer', 'Lancer', 'Rider', 'Caster', 'Berserker', 'Assassin'
-    ]
     this.$interval = setInterval(() => {
-      this.$title = servantTypes[Math.floor(Math.random() * servantTypes.length)]
+      this.$setPageTitle(CREW[Math.floor(Math.random() * CREW.length)])
     }, 2000)
   },
   beforeDestroy () {
@@ -54,26 +71,34 @@ export default {
 </script>
 
 <template>
-  <div>{{ $title }}</div>
+  <h1>{{ $title }}</h1>
 </template>
 ```
+#### Function title
 
-Or better, watch the title react:
+You are able to turn the title changes acative, like a computed.
+
 ```vue
 <script>
+const EMPERORS = [
+  'Shanks',
+  'Marshall D. Teach',
+  'Monkey D. Luffy',
+  'Buggy'
+]
+
 export default {
-  title: ctx => ctx.title,
+  title () {
+    return this.emperor
+  },
   data () {
     return {
-      title: 'Start'
+      emperor: 'Four Emperors'
     }
   }
   mounted () {
-    const servantTypes = [
-      'Ruler', 'Saber', 'Archer', 'Lancer', 'Rider', 'Caster', 'Berserker', 'Assassin'
-    ]
     this.$interval = setInterval(() => {
-      this.title = servantTypes[Math.floor(Math.random() * servantTypes.length)]
+      this.emperor = EMPERORS[Math.floor(Math.random() * EMPERORS.length)]
     }, 2000)
   },
   beforeDestroy () {
@@ -83,27 +108,12 @@ export default {
 </script>
 
 <template>
-  <div>{{ $title }}</div>
+  <h1>{{ $title }}</h1>
 </template>
-```
-
-It is also possible to generate a title dynamically, using a function. It receives as an argument the component instance.
-
-```js
-export default {
-  title: (context) => `Client: ${context.client.name}`,
-  data () {
-    return {
-      client: {
-        name: 'Type-Moon.'
-      }
-    }
-  }
-}
 ```
 
 This is particularly useful for internationalization.  
-This is an example using [vue-i18n](https://github.com/kazupon/vue-i18n).
+This is an example using [vue-i18n@9](https://github.com/intlify/vue-i18n-next).
 
 ```js
 export default {
@@ -111,20 +121,23 @@ export default {
 }
 ```
 
-## Vue Router usage
+## Vue Router integration
+
 ### Setup
 
 ```js
-import Vue from 'vue'
-import VuePageTitle from 'vue-page-title'
-
+import { createApp } from 'vue'
+import { pageTitle } from 'vue-page-title'
 import router from 'path/to/application/router'
 
-Vue.use(VuePageTitle, { router })
+const app = createApp(Root)
+
+app.use(pageTitle({ router }));
 ```
 
 ```js
 // path/to/application/router
+import { createRouter, createWebHashHistory } from 'vue-router'
 import FooComponent from 'path/to/foo-component'
 import HomeComponent from 'path/to/home-component'
 
@@ -142,19 +155,18 @@ const routes = [{
   }
 }]
 
-export default new VueRouter({
+export default createRouter({
+  history: createWebHashHistory(),
   routes
 })
 ```
 
 ### Watching routes
 
-```javascript
-<script>
+```js
 export default {
   title () {
     return `My title is: ${this.$route.query.foo}`
   }
 }
-</script>
 ```
