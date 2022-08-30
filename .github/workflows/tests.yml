@@ -32,10 +32,17 @@ jobs:
       - name: 🧪 Tests
         run: yarn run test
 
-      - name: 🎨 Linter
+      - name: 🎨 ESLint
         run: |
-          yarn run lint
-          yarn run format:check
+          yarn run lint || (echo "##[error] found lint errors. please 'yarn run lint --fix'" \
+                 "and fix all errors" \
+            && exit 1)
+
+      - name: 🎨 Format
+        run: |
+          yarn run format:check || (echo "##[error] found unformatted files. please 'yarn run format'" \
+                 "and check in all changes" \
+            && exit 1)
 
       - name: 🏗️ Example build
         run: yarn run build:doc
@@ -48,3 +55,26 @@ jobs:
     steps:
       - name: Summary status
         run: if ${{ needs.test.result != 'success' && needs.test.result != 'skipped' }}; then exit 1; fi
+
+  coverage:
+    needs: summary
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+    - name: 📥​ Checkout
+      uses: actions/checkout@v3
+
+    - name: 🪄 Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        cache: 'yarn'
+
+    - name: 📦 Install dependencies
+      run: yarn install
+
+    - uses: paambaati/codeclimate-action@v3
+      env:
+        CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+      with:
+        coverageCommand: yarn test --coverage
