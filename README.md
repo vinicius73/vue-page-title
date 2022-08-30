@@ -6,6 +6,8 @@
 
 [![Known Vulnerabilities](https://snyk.io/test/github/vinicius73/vue-page-title/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vinicius73/vue-page-title?targetFile=package.json) [![Known Vulnerabilities](https://badgen.net/bundlephobia/minzip/vue-page-title)](https://bundlephobia.com/result?p=vue-page-title) [![Tests](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml)
 
+[![Example App](https://img.shields.io/website?down_message=Off&label=Example%20App&up_message=On&url=https%3A%2F%2Fvinicius73.github.io%2Fvue-page-title%2Findex.html)](https://vinicius73.github.io/vue-page-title/index.html) [![Doctype](https://img.shields.io/website?down_message=Off&label=Doctype&up_message=On&url=https%3A%2F%2Fvinicius73.github.io%2Fvue-page-title%2Ftypes%2Findex.html)](https://vinicius73.github.io/vue-page-title/types/index.html)
+
 ## Install [![npm version](https://badge.fury.io/js/vue-page-title.svg)](https://badge.fury.io/js/vue-page-title)
 
 ```shell
