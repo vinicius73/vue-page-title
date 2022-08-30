@@ -4,16 +4,21 @@ checks:
 filter:
   paths: ['lib/*']
   excluded_paths:
-    - test/*
+    - tests/*
+    - examples/*
 
 build:
   environment:
     node:
       version: v16
 
+  dependencies:
+    override:
+      - command: 'yarn install'
+
   tests:
     override:
-      - command: 'yarn install && yarn run test'
+      - command: 'yarn run test'
         coverage:
           file: 'coverage/clover.xml'
           format: 'clover'
