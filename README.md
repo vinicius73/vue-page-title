@@ -20,9 +20,22 @@ const app = createApp(Root)
 
 app.use(pageTitle({
   suffix: '- Vue Page Title',
-  mixin: true.
+  mixin: true,
 }));
 ```
+
+### Compatibility
+
+Vue | Version
+--- | -------
+v2  | [v1.*](https://github.com/vinicius73/vue-page-title/tree/v1)
+v3  | [v2.*](https://github.com/vinicius73/vue-page-title/)
+
+#### Migration from v1
+
+All resources from `v1` works on `v2`.
+
+Now mixin is optional and must be defined as true to be automatically registered in the app.
 
 ### Options
 
@@ -36,10 +49,61 @@ setTitleMethod | `Function` | custom method of setting title
 
 ## Usage
 
+### Composition API
+
+```vue
+<script>
+import { createApp, h, ref, computed, onBeforeUnmount } from 'vue'
+import { useTitle } from 'vue-page-title'
+
+const CAPTAINS = [
+  'Monkey D. Luffy',
+  'Trafalgar D. Water Law',
+  'Eustass Kid',
+  'Shanks',
+  'Edward Newgate',
+  'Charlotte Linlin',
+  'Capone Bege',
+  'Gol D. Roger'
+]
+
+const getCapitain = () => CAPTAINS[
+  Math.floor(Math.random() * CAPTAINS.length)
+]
+
+export default defineComponent({
+  setup () {
+    const current = ref('Capitains')
+    const { title } = useTitle(current)
+
+    const refresh = () => {
+      current.value = getCapitain()
+    }
+
+    const interval = setInterval(refresh, 5000)
+
+    onBeforeUnmount(() => {
+      clearInterval(interval)
+    })
+
+    return {
+      title
+    }
+  }
+})
+</script>
+
+<template>
+  <h1>{{ title }}</h1>
+</template>
+```
+
 ### Mixin
 
 With the mixin option enabled, just set the `title` option inside the component.  
 Within the component it is still possible to update the `$title` state using `$setPageTitle` function, it is also available to be used within the component template.
+
+> The option `mixin` must be `true`.
 
 ```vue
 <script>
@@ -89,13 +153,13 @@ const EMPERORS = [
 
 export default {
   title () {
-    return this.emperor
+    return `🏴‍☠️ ${this.emperor}`
   },
   data () {
-    return {
-      emperor: 'Four Emperors'
+  	return {
+    	emperor: 'Four Emperors',
     }
-  }
+  },
   mounted () {
     this.$interval = setInterval(() => {
       this.emperor = EMPERORS[Math.floor(Math.random() * EMPERORS.length)]
@@ -103,7 +167,7 @@ export default {
   },
   beforeDestroy () {
     clearInterval(this.$interval)
-  }
+  },
 }
 </script>
 
