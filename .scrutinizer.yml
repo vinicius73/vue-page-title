@@ -14,6 +14,7 @@ build:
 
   dependencies:
     override:
+      - command: 'npm --global install yarn'
       - command: 'yarn install'
 
   tests:
