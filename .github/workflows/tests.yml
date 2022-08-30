@@ -60,6 +60,7 @@ jobs:
     needs: summary
     name: coverage
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
     steps:
       - name: 📥​ Checkout
         uses: actions/checkout@v3
@@ -73,7 +74,8 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - uses: paambaati/codeclimate-action@v3
+      - name: 🗂️ Collect coverage
+        uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
