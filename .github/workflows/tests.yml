@@ -61,20 +61,20 @@ jobs:
     name: coverage
     runs-on: ubuntu-latest
     steps:
-    - name: 📥​ Checkout
-      uses: actions/checkout@v3
+      - name: 📥​ Checkout
+        uses: actions/checkout@v3
 
-    - name: 🪄 Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        cache: 'yarn'
+      - name: 🪄 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
 
-    - name: 📦 Install dependencies
-      run: yarn install
+      - name: 📦 Install dependencies
+        run: yarn install
 
-    - uses: paambaati/codeclimate-action@v3
-      env:
-        CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-      with:
-        coverageCommand: yarn test --coverage
+      - uses: paambaati/codeclimate-action@v3
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+        with:
+          coverageCommand: yarn test --coverage
