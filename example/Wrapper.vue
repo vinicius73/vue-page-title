@@ -6,8 +6,8 @@ import { useTitle } from '../lib';
 
 const getPattern = (val: string): string => {
   return svgToMiniDataURI(
-    //@ts-ignore
     globalThis
+    //@ts-ignore
       .trianglify({ height: 540, width: 960, seed: val })
       .toSVGTree()
       .toString()
