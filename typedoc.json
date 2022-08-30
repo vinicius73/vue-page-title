@@ -1,6 +1,4 @@
 {
-  "entryPoints": [
-    "lib/index.ts"
-  ],
+  "entryPoints": ["lib/index.ts"],
   "out": "dist/types"
 }

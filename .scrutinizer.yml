@@ -1,8 +1,8 @@
 checks:
-    javascript: true
+  javascript: true
 
 filter:
-  paths: ["lib/*"]
+  paths: ['lib/*']
   excluded_paths:
     - test/*
 
@@ -13,8 +13,7 @@ build:
 
   tests:
     override:
-      -
-        command: 'yarn install && yarn run test'
+      - command: 'yarn install && yarn run test'
         coverage:
           file: 'coverage/clover.xml'
           format: 'clover'

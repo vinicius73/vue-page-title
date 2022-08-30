@@ -1,9 +1,9 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'PageFooter'
-})
+  name: 'PageFooter',
+});
 </script>
 
 <template>
@@ -49,7 +49,8 @@ li {
   text-align: center;
 }
 
-li:hover, li a.router-link-active {
+li:hover,
+li a.router-link-active {
   background-color: rgb(var(--base-bg) / 95%);
 }
 

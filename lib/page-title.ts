@@ -1,10 +1,10 @@
-import type { TitleOptions, SetTitleOptions } from "./types";
-import { safeString } from './utils'
+import type { TitleOptions, SetTitleOptions } from './types';
+import { safeString } from './utils';
 
 /**
  * if use ssr document is not available
  */
-const isBrowser = (): boolean => (typeof document !== 'undefined')
+const isBrowser = (): boolean => typeof document !== 'undefined';
 
 /**
  * build a full title white suffix and prefix
@@ -18,7 +18,7 @@ const buildPageTitle = (value: string, options: TitleOptions = {}): string => {
 const setPageTitle = (value: string, options: SetTitleOptions = {}): void => {
   // test if not is a browser
   if (!isBrowser()) {
-    console.warn("vue-page-title: no browser enviroment");
+    console.warn('vue-page-title: no browser enviroment');
     return;
   }
 

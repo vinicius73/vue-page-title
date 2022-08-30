@@ -1,7 +1,7 @@
-import type { Router } from "vue-router";
-import { SetTitleFn } from "./types";
+import type { Router } from 'vue-router';
+import { SetTitleFn } from './types';
 
-declare module "vue-router" {
+declare module 'vue-router' {
   interface RouteMeta {
     // is optional
     title?: string;
@@ -13,7 +13,7 @@ const setupRouter = (router: Router, setTitle: SetTitleFn): void => {
     const { meta } = to;
 
     // if has meta and title
-    if ((meta?.title) != null) {
+    if (meta?.title != null) {
       setTitle(meta.title);
     }
   });

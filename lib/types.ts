@@ -1,5 +1,5 @@
-import type { Router } from "vue-router";
-import type { ComponentOptions } from 'vue'
+import type { Router } from 'vue-router';
+import type { ComponentOptions } from 'vue';
 
 export interface TitleOptions {
   /**
@@ -12,30 +12,30 @@ export interface TitleOptions {
   suffix?: string;
 }
 
-export type SetTitleFn = (val: string) => void
-export type TitleOptionFn<T = ComponentOptions> = (this: T, ctx: T) => string
+export type SetTitleFn = (val: string) => void;
+export type TitleOptionFn<T = ComponentOptions> = (this: T, ctx: T) => string;
 
-export type TitleOption = TitleOptionFn | string
+export type TitleOption = TitleOptionFn | string;
 
 export interface SetTitleOptions extends TitleOptions {
   /**
    * Custom title definition
    */
-  setTitleMethod?: SetTitleFn
+  setTitleMethod?: SetTitleFn;
 }
 
 export interface PageTitleOptions extends SetTitleOptions {
   /**
    * Register mixin
    */
-  mixin?: boolean,
+  mixin?: boolean;
   /**
    * Enable router integration
    */
   router?: Router;
 }
 
-declare module "@vue/runtime-core" {
+declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     /**
      * Current title

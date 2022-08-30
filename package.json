@@ -30,7 +30,9 @@
     "dev": "vite dev -c vite.config.example.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint lib example"
+    "lint": "eslint lib example",
+    "format": "prettier -w .",
+    "format:check": "prettier -c ."
   },
   "peerDependencies": {
     "vue": "^3.2",

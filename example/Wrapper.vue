@@ -1,42 +1,43 @@
 <script lang="ts">
-import { defineComponent, watch, ref } from 'vue'
-import svgToMiniDataURI from 'mini-svg-data-uri'
-import { throttle } from 'radash'
-import { useTitle } from '../lib'
+import { defineComponent, watch, ref } from 'vue';
+import svgToMiniDataURI from 'mini-svg-data-uri';
+import { throttle } from 'radash';
+import { useTitle } from '../lib';
 
 const getPattern = (val: string): string => {
   return svgToMiniDataURI(
     //@ts-ignore
-    globalThis.trianglify({ height: 540, width: 960, seed: val })
+    globalThis
+      .trianglify({ height: 540, width: 960, seed: val })
       .toSVGTree()
       .toString()
-  )
-}
+  );
+};
 
 const getStyle = (val: string) => {
   return {
-    'background-image': `url("${getPattern(val)}")`
-  }
-}
+    'background-image': `url("${getPattern(val)}")`,
+  };
+};
 
 export default defineComponent({
   name: 'Wrapper',
   setup() {
-    const { title } = useTitle()
+    const { title } = useTitle();
 
-    const style = ref(getStyle(title.value))
+    const style = ref(getStyle(title.value));
 
-    const refresh = throttle({ interval: 100 },(val: string) => {
-      style.value = getStyle(title.value)
-    })
+    const refresh = throttle({ interval: 100 }, (val: string) => {
+      style.value = getStyle(title.value);
+    });
 
-    watch(title, refresh)
+    watch(title, refresh);
 
     return {
-      style
-    }
+      style,
+    };
   },
-})
+});
 </script>
 
 <template>

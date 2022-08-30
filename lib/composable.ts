@@ -1,11 +1,7 @@
-import type {
-  ComputedRef,
-  ComputedGetter,
-  WatchSource,
-} from 'vue';
-import type { SetTitleFn } from './types'
-import { inject, computed, ref, watch } from "vue";
-import { PAGE_TITLE, SET_PAGE_TITLE } from './injection-keys'
+import type { ComputedRef, ComputedGetter, WatchSource } from 'vue';
+import type { SetTitleFn } from './types';
+import { inject, computed, ref, watch } from 'vue';
+import { PAGE_TITLE, SET_PAGE_TITLE } from './injection-keys';
 
 export type initialValue =
   | string

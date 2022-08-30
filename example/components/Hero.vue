@@ -1,13 +1,13 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 import PageFooter from './PageFooter.vue';
 
 export default defineComponent({
   name: 'PageHero',
   components: {
-    PageFooter
-  }
-})
+    PageFooter,
+  },
+});
 </script>
 
 <template>

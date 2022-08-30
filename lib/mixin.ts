@@ -1,5 +1,5 @@
-import type { ComponentOptionsMixin, CreateComponentPublicInstance } from "vue";
-import { isFunction } from "./utils";
+import type { ComponentOptionsMixin, CreateComponentPublicInstance } from 'vue';
+import { isFunction } from './utils';
 
 /**
  * Mixin, to be used in options API

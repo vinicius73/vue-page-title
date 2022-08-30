@@ -3,23 +3,19 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
   extends: [
     'plugin:vue/vue3-essential',
     'standard-with-typescript',
-    'prettier'
+    'prettier',
   ],
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     project: './tsconfig.json',
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'vue'
-  ],
-  rules: {
-  }
-}
+  plugins: ['vue'],
+  rules: {},
+};
