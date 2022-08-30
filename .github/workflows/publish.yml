@@ -34,6 +34,7 @@ jobs:
 
       - name: 💩 Change package name
         run: |
+          export YARN_ENABLE_IMMUTABLE_INSTALLS=false
           node -e "let pkg=require('./package.json'); pkg.name='@vinicius73/' + pkg.name; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
           yarn install
 
