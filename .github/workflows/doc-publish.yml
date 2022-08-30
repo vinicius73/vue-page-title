@@ -1,6 +1,9 @@
 name: Doc Publish
 
 on:
+  push:
+    tags:
+      - v*
   release:
     types: [published]
 
@@ -25,6 +28,7 @@ jobs:
 
       - name: Install dependencies & build
         run: |
+          export DIST_BASE_URL=/vue-page-title/
           yarn install
           yarn run build:doc
 
