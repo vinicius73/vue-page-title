@@ -28,6 +28,12 @@ app.use(
 );
 ```
 
+#### Examples
+
+- [mixin 01](https://jsfiddle.net/vinicius73/3b5nrkdu/])
+- [mixin 02](https://jsfiddle.net/vinicius73/3tqknpLf/)
+- [composition](https://jsfiddle.net/vinicius73/3fnpq2hL/)
+
 ### Compatibility
 
 | Vue | Version                                                       |
