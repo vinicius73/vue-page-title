@@ -1,0 +1,35 @@
+name: Doc Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    name: Publish doc
+    steps:
+      - name: Check actor permission level
+        uses: skjnldsv/check-actor-permission@v2
+        with:
+          require: admin
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies & build
+        run: |
+          yarn install
+          yarn run build:doc
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
