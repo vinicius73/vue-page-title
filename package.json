@@ -32,7 +32,8 @@
     "test:watch": "vitest",
     "lint": "eslint lib example",
     "format": "prettier -w .",
-    "format:check": "prettier -c ."
+    "format:check": "prettier -c .",
+    "check": "yarn lint && yarn format:check"
   },
   "peerDependencies": {
     "vue": "^3.2",
