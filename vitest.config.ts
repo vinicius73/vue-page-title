@@ -6,7 +6,7 @@ export default defineConfig({
     threads: false,
     environment: 'jsdom',
     coverage: {
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json', 'html', 'clover', 'lcov'],
     },
   },
 });
