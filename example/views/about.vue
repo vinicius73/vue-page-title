@@ -28,7 +28,7 @@ const LINKS = [{
   url: 'https://vinicius73.dev'
 }]
 
-export default defineComponent<{ $interval: number, actual: string, links: typeof LINKS }>({
+export default defineComponent<{ $interval: NodeJS.Timer, actual: string, links: typeof LINKS }>({
   name: 'About',
   LINKS,
   title() {

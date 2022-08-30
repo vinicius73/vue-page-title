@@ -98,6 +98,43 @@ export default defineComponent({
 </template>
 ```
 
+```ts
+const { title } = useTitle('initial title`)
+```
+
+#### React from ref state
+
+```ts
+const name = ref('initial name')
+const { title } = useTitle(name)
+```
+
+#### Use like a watch source argument
+
+```ts
+const product = ref({ name: 'One Piece 1017' })
+const { title } = useTitle(() => product.name)
+```
+
+#### Pass a computed as argument
+
+```ts
+const product = ref({ name: 'One Piece 1017' })
+const name = computed(() => product.name)
+const { title } = useTitle(name)
+```
+
+#### Use `setTitle` to dynamically change the title
+
+```ts
+const product = ref({ name: 'One Piece 1017' })
+const { setTitle } = useTitle()
+
+watchEffect(() => {
+  setTitle(product.name)
+})
+```
+
 ### Mixin
 
 With the mixin option enabled, just set the `title` option inside the component.  
@@ -199,8 +236,9 @@ const app = createApp(Root)
 app.use(pageTitle({ router }));
 ```
 
+> path/to/application/router
+
 ```js
-// path/to/application/router
 import { createRouter, createWebHashHistory } from 'vue-router'
 import FooComponent from 'path/to/foo-component'
 import HomeComponent from 'path/to/home-component'

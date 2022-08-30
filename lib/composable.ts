@@ -8,6 +8,48 @@ export type initialValue =
   | ComputedGetter<string>
   | WatchSource<string>;
 
+/**
+ * Get current title or update it.
+ *
+ * ## Define initial title
+ *
+ * ```ts
+ * const { title } = useTitle('initial title`)
+ * ```
+ *
+ * ## React from ref state
+ *
+ * ```ts
+ * const name = ref('initial name')
+ * const { title } = useTitle(name)
+ * ```
+ *
+ * ## Use like a watch source argument
+ *
+ * ```ts
+ * const product = ref({ name: 'One Piece 1017' })
+ * const { title } = useTitle(() => product.name)
+ * ```
+ *
+ * ## Pass a computed as argument
+ *
+ * ```ts
+ * const product = ref({ name: 'One Piece 1017' })
+ * const name = computed(() => product.name)
+ * const { title } = useTitle(name)
+ * ```
+ *
+ * ## Use `setTitle` to dynamically change the title
+ *
+ * ```ts
+ * const product = ref({ name: 'One Piece 1017' })
+ * const { setTitle } = useTitle()
+ *
+ * watchEffect(() => {
+ *   setTitle(product.name)
+ * })
+ * ```
+ */
 const useTitle = (initial?: initialValue) => {
   const title = inject(PAGE_TITLE, ref<string>(""));
   const setTitle = inject(SET_PAGE_TITLE, () => {});

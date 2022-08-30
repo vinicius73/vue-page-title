@@ -2,14 +2,12 @@
 import { defineComponent, watch, ref } from 'vue'
 import svgToMiniDataURI from 'mini-svg-data-uri'
 import { throttle } from 'radash'
-//@ts-ignore
-import trianglify from 'trianglify'
-
 import { useTitle } from '../lib'
 
 const getPattern = (val: string): string => {
   return svgToMiniDataURI(
-    trianglify({ height: 540, width: 960, seed: val })
+    //@ts-ignore
+    globalThis.trianglify({ height: 540, width: 960, seed: val })
       .toSVGTree()
       .toString()
   )
