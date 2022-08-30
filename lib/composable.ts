@@ -1,4 +1,9 @@
-import { ComputedRef, ComputedGetter, WatchSource } from "vue";
+import type {
+  ComputedRef,
+  ComputedGetter,
+  WatchSource,
+} from 'vue';
+import type { SetTitleFn } from './types'
 import { inject, computed, ref, watch } from "vue";
 import { PAGE_TITLE, SET_PAGE_TITLE } from './injection-keys'
 
@@ -50,14 +55,16 @@ export type initialValue =
  * })
  * ```
  */
-const useTitle = (initial?: initialValue) => {
-  const title = inject(PAGE_TITLE, ref<string>(""));
+const useTitle = (
+  initial?: initialValue
+): { title: ComputedRef<string>; setTitle: SetTitleFn } => {
+  const title = inject(PAGE_TITLE, ref<string>(''));
   const setTitle = inject(SET_PAGE_TITLE, () => {});
 
   if (typeof initial === 'string') {
-    setTitle(initial)
+    setTitle(initial);
   } else if (initial != null) {
-    watch(initial, setTitle, { immediate: true })
+    watch(initial, setTitle, { immediate: true });
   }
 
   return {

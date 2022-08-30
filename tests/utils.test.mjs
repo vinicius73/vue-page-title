@@ -6,6 +6,7 @@ describe('isFunction', async () => {
     [() => { }, true],
     [function () { }, true],
     [function foo() { }, true],
+    // eslint-disable-next-line no-new-func
     [new Function('return true'), true],
     [({ foo() { } }).foo, true],
     [undefined, false],

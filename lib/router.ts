@@ -13,7 +13,7 @@ const setupRouter = (router: Router, setTitle: SetTitleFn): void => {
     const { meta } = to;
 
     // if has meta and title
-    if (meta && meta.title) {
+    if ((meta?.title) != null) {
       setTitle(meta.title);
     }
   });

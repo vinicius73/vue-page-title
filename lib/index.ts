@@ -21,11 +21,11 @@ const pageTitle = (options: PageTitleOptions = {}): Plugin => {
 
   const installedApps = new WeakSet<App>();
 
-  if (options.router) {
+  if (options.router != null) {
     setupRouter(options.router, setTitle);
   }
 
-  const install = (app: App) => {
+  const install = (app: App): void => {
     // prevent double install
     if (installedApps.has(app)) {
       return;
@@ -33,7 +33,7 @@ const pageTitle = (options: PageTitleOptions = {}): Plugin => {
 
     installedApps.add(app);
 
-    if (options.mixin) {
+    if (options.mixin ?? false) {
       app.mixin(pageTitleMixin);
     }
 

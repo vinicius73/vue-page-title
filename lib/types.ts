@@ -1,5 +1,5 @@
 import type { Router } from "vue-router";
-import type { ComponentOptions, ComponentCustomOptions } from '@vue/runtime-core'
+import type { ComponentOptions } from 'vue'
 
 export interface TitleOptions {
   /**

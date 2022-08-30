@@ -8,7 +8,7 @@ const router = createRouter({
     {
       name: "home",
       path: "/",
-      component: () => import("./views/home.vue"),
+      component: async () => await import("./views/home.vue"),
       meta: {
         title: "🏠",
       },
@@ -16,7 +16,7 @@ const router = createRouter({
     {
       name: "about",
       path: "/about",
-      component: () => import("./views/about.vue"),
+      component: async () => await import("./views/about.vue"),
     },
   ],
 });
