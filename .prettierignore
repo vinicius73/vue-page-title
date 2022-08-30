@@ -1,0 +1,6 @@
+index.html
+.vscode/
+.yarn/
+dist/
+coverage/
+public/
