@@ -67,7 +67,7 @@
     "reseter.css": "^2.0.0",
     "typedoc": "^0.23.11",
     "typescript": "^4.8.2",
-    "vite": "^3.0.9",
+    "vite": "^3.1.2",
     "vite-plugin-banner": "^0.4.0",
     "vitest": "^0.22.1",
     "vue": "^3.2.38",
