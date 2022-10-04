@@ -35,7 +35,7 @@ describe('setPageTitle', async () => {
     expect(document.title).toBe('Trunks');
 
     setPageTitle('');
-    expect(document.title).toBe('Trunks');
+    expect(document.title).toBe('');
   });
 
   it('setTitleMethod', () => {
