@@ -7,12 +7,14 @@ import { safeString } from './utils';
 const isBrowser = (): boolean => typeof document !== 'undefined';
 
 /**
- * build a full title white suffix and prefix
+ * build a full title with suffix, prefix and glue
  */
 const buildPageTitle = (value: string, options: TitleOptions = {}): string => {
-  const { prefix, suffix } = options;
-
-  return `${safeString(prefix)} ${value} ${safeString(suffix)}`.trim();
+  const { prefix, suffix, glue } = options;
+  const glueString = value ? (glue ? safeString(glue) : ' ') : '';
+  const prefixString = prefix ? safeString(prefix) + glueString : '';
+  const suffixString = suffix ? glueString + safeString(suffix) : '';
+  return `${prefixString}${value}${suffixString}`.trim();
 };
 
 const setPageTitle = (value: string, options: SetTitleOptions = {}): void => {

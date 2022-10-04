@@ -10,6 +10,10 @@ export interface TitleOptions {
    * Suffix to be used in title generation
    */
   suffix?: string;
+  /**
+   * Glue to be used in title generation
+   */
+  glue?: string;
 }
 
 export type SetTitleFn = (val: string) => void;

@@ -7,6 +7,10 @@ describe('buildPageTitle', async () => {
     ['foo', {}, 'foo'],
     ['foo', { prefix: 'DBZ -' }, 'DBZ - foo'],
     ['foo', { suffix: '- DBZ' }, 'foo - DBZ'],
+    ['foo', { prefix: 'DBZ', glue: ' - '}, 'DBZ - foo'],
+    ['foo', { glue: ' - ', suffix: 'DBZ' }, 'foo - DBZ'],
+    ['', { suffix: 'DBZ', glue: ' - ' }, 'DBZ'],
+    ['', { prefix: 'DBZ', glue: ' - ' }, 'DBZ'],
   ];
 
   it.each(tests)('buildPageTitle(%s, %o) -> %s', (a, b, expected) => {
