@@ -26,11 +26,6 @@ const setPageTitle = (value: string, options: SetTitleOptions = {}): void => {
 
   value = safeString(value);
 
-  // test if title is empty
-  if (value.length === 0) {
-    return;
-  }
-
   const { setTitleMethod } = options;
   const title = buildPageTitle(value, options);
 
