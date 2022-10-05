@@ -51,14 +51,14 @@ Now mixin is optional and must be defined as true to be automatically registered
 
 ### Options
 
-| Name           | Type                                                                           | Description                                                                                        |
-| -------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| suffix         | `String`                                                                       | suffix for the value of the page title tag                                                         |
-| prefix         | `String`                                                                       | prefix for the value of the page title tag                                                         |
-| glue           | `String`                                                                       | a string that comes between the prefix and value and the value and the suffix, defaults to a space |
-| mixin          | `Boolean`                                                                      | if true, enable plugin mixin in the components                                                     |
-| router         | [VueRouter instance](https://router.vuejs.org/api/#router-instance-properties) | if present, allows you to set the title via the route.                                             |
-| setTitleMethod | `Function`                                                                     | custom method of setting title                                                                     |
+| Name           | Type                                                                           | Description                                                                                          |
+| -------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| suffix         | `String`                                                                       | suffix for the value of the page title tag                                                           |
+| prefix         | `String`                                                                       | prefix for the value of the page title tag                                                           |
+| separator      | `String`                                                                       | a string that comes between the prefix and the title / the title and the suffix, defaults to a space |
+| mixin          | `Boolean`                                                                      | if true, enable plugin mixin in the components                                                       |
+| router         | [VueRouter instance](https://router.vuejs.org/api/#router-instance-properties) | if present, allows you to set the title via the route.                                               |
+| setTitleMethod | `Function`                                                                     | custom method of setting title                                                                       |
 
 ## Usage
 

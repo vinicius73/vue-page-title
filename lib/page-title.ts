@@ -7,13 +7,13 @@ import { safeString } from './utils';
 const isBrowser = (): boolean => typeof document !== 'undefined';
 
 /**
- * build a full title with suffix, prefix and glue
+ * build a full title with prefix, suffix and separator
  */
 const buildPageTitle = (value: string, options: TitleOptions = {}): string => {
-  const { prefix, suffix, glue } = options;
-  const glueString = value ? (glue ? safeString(glue) : ' ') : '';
-  const prefixString = prefix ? safeString(prefix) + glueString : '';
-  const suffixString = suffix ? glueString + safeString(suffix) : '';
+  const { prefix, suffix, separator } = options;
+  const separatorString = value ? (separator ? safeString(separator) : ' ') : '';
+  const prefixString = prefix ? safeString(prefix) + separatorString : '';
+  const suffixString = suffix ? separatorString + safeString(suffix) : '';
   return `${prefixString}${value}${suffixString}`.trim();
 };
 
