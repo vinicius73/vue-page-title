@@ -7,6 +7,10 @@ describe('buildPageTitle', async () => {
     ['foo', {}, 'foo'],
     ['foo', { prefix: 'DBZ -' }, 'DBZ - foo'],
     ['foo', { suffix: '- DBZ' }, 'foo - DBZ'],
+    ['foo', { prefix: 'DBZ', separator: ' - ' }, 'DBZ - foo'],
+    ['foo', { separator: ' - ', suffix: 'DBZ' }, 'foo - DBZ'],
+    ['', { suffix: 'DBZ', separator: ' - ' }, 'DBZ'],
+    ['', { prefix: 'DBZ', separator: ' - ' }, 'DBZ'],
   ];
 
   it.each(tests)('buildPageTitle(%s, %o) -> %s', (a, b, expected) => {
@@ -31,7 +35,7 @@ describe('setPageTitle', async () => {
     expect(document.title).toBe('Trunks');
 
     setPageTitle('');
-    expect(document.title).toBe('Trunks');
+    expect(document.title).toBe('');
   });
 
   it('setTitleMethod', () => {
