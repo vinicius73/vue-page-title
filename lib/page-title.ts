@@ -11,9 +11,9 @@ const isBrowser = (): boolean => typeof document !== 'undefined';
  */
 const buildPageTitle = (value: string, options: TitleOptions = {}): string => {
   const { prefix, suffix, separator } = options;
-  const separatorString = value ? (separator ? safeString(separator) : ' ') : '';
-  const prefixString = prefix ? safeString(prefix) + separatorString : '';
-  const suffixString = suffix ? separatorString + safeString(suffix) : '';
+  const separatorString = value.length > 0 ? (safeString(separator).length > 0 ? safeString(separator) : ' ') : '';
+  const prefixString = safeString(prefix).length > 0 ? safeString(prefix) + separatorString : '';
+  const suffixString = safeString(suffix).length > 0 ? separatorString + safeString(suffix) : '';
   return `${prefixString}${value}${suffixString}`.trim();
 };
 
