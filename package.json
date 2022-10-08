@@ -53,7 +53,7 @@
     "@vitejs/plugin-vue": "^3.1.2",
     "@vitest/coverage-c8": "^0.23.4",
     "@vue/test-utils": "^2.1.0",
-    "eslint": "^8.24.0",
+    "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
