@@ -58,7 +58,7 @@
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
-    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-promise": "^6.1.0",
     "eslint-plugin-vue": "^9.6.0",
     "jsdom": "^20.0.1",
     "mini-svg-data-uri": "^1.4.4",
