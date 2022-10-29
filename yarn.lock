@@ -3837,9 +3837,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.23.16":
-  version: 0.23.16
-  resolution: "typedoc@npm:0.23.16"
+"typedoc@npm:^0.23.19":
+  version: 0.23.19
+  resolution: "typedoc@npm:0.23.19"
   dependencies:
     lunr: ^2.3.9
     marked: ^4.0.19
@@ -3849,7 +3849,7 @@ __metadata:
     typescript: 4.6.x || 4.7.x || 4.8.x
   bin:
     typedoc: bin/typedoc
-  checksum: 3574ee4a5fe3ca485b8a7d18cbe745bffe6d21886fcbc09c59551d0442d90b6391d435b06245199293914500c4f237fd0e7cc3eec678f1f8ee796b88b3d96089
+  checksum: 4659dce4e8550a3f0d4739b6c9c583d8f2afba9c37e2fe38325e3cff781a50daf57afe10cbcc27f11b56da0623d502628e0713c55f30eae619c4427d18ce1064
   languageName: node
   linkType: hard
 
@@ -4075,7 +4075,7 @@ __metadata:
     prettier: ^2.7.1
     radash: ^7.1.0
     reseter.css: ^2.0.0
-    typedoc: ^0.23.16
+    typedoc: ^0.23.19
     typescript: ^4.8.4
     vite: ^3.1.7
     vite-plugin-banner: ^0.5.0
