@@ -78,5 +78,5 @@
     "node": ">= 16",
     "npm": ">= 8"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.3.0"
 }
