@@ -54,7 +54,7 @@ export default defineComponent<{
   },
   mounted() {
     this.$interval = setInterval(() => {
-      this.actual = draw(NAMES);
+      this.actual = draw(NAMES) ?? 'Non-public interest person.';
     }, 3_000);
   },
   beforeUnmount() {
