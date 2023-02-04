@@ -371,10 +371,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.11.16":
+"@types/node@npm:*":
   version: 18.11.16
   resolution: "@types/node@npm:18.11.16"
   checksum: 23603ecc1cc5afdd2311671565e1bd1a8905e18ed7f05857089eebe524824a3347dd0c3de9c1c291839f7cf21bcf5633903cdf7905efa0fdc7464cc7606fc9fa
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.11.19":
+  version: 18.11.19
+  resolution: "@types/node@npm:18.11.19"
+  checksum: d7cd19fcfc59cbdd3f9ba0b4072cb7adc21bd575bd8eb7d7e698975e63564aaa83f03434f32b12331f84f73d0b369d9cbe2371e359d9d7f5c3361f4987f4f7da
   languageName: node
   linkType: hard
 
@@ -4092,7 +4099,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vue-page-title@workspace:."
   dependencies:
-    "@types/node": ^18.11.16
+    "@types/node": ^18.11.19
     "@typescript-eslint/eslint-plugin": ^5.46.1
     "@vitejs/plugin-vue": ^4.0.0
     "@vitest/coverage-c8": ^0.25.8
