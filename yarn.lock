@@ -3702,10 +3702,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"radash@npm:^10.9.0":
-  version: 10.9.0
-  resolution: "radash@npm:10.9.0"
-  checksum: 86d62a675d707d4779e37cdbdec2a9fe27be00f7607db45bfc17ec60b4d248bd5947f9eebd4869dc3f7f2545ac7acf9e312de075fd221d20b86db823b8ced206
+"radash@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "radash@npm:11.0.0"
+  checksum: c9203ac64d65dee57aa6bd722a66db83d9910f998086ad15bc6e1a2c0dd8e4d874909d09855932ad00950d03d431ccd3866a250dfc154edce681eb3382604def
   languageName: node
   linkType: hard
 
@@ -4642,7 +4642,7 @@ __metadata:
     jsdom: ^20.0.3
     mini-svg-data-uri: ^1.4.4
     prettier: ^2.8.8
-    radash: ^10.9.0
+    radash: ^11.0.0
     reseter.css: ^2.0.0
     typedoc: ^0.24.8
     typescript: ^4.9.5
