@@ -63,7 +63,7 @@
     "eslint-plugin-vue": "^9.15.1",
     "jsdom": "^20.0.3",
     "mini-svg-data-uri": "^1.4.4",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.1",
     "radash": "^10.9.0",
     "reseter.css": "^2.0.0",
     "typedoc": "^0.24.8",
