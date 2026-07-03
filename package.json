@@ -34,7 +34,7 @@
     "lint": "eslint lib example",
     "lint:ox": "oxlint lib example",
     "format": "prettier -w .",
-    "format:ox": "oxfmt --write .",
+    "format:ox": "oxfmt .",
     "format:ox:check": "oxfmt --check .",
     "format:check": "prettier -c .",
     "check": "yarn lint && yarn format:check"
