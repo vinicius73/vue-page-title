@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [18, 20, 22]
+        node: [20, 22]
     name: Test Node v${{ matrix.node }}
     steps:
       - name: 📥​ Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🪄 Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           cache: 'yarn'
@@ -32,13 +32,13 @@ jobs:
       - name: 🧪 Tests
         run: yarn run test
 
-      - name: 🎨 ESLint
+      - name: 🎨 Oxlint
         run: |
-          yarn run lint || (echo "##[error] found lint errors. please 'yarn run lint --fix'" \
+          yarn run lint || (echo "##[error] found lint errors. please 'yarn run lint:fix'" \
                  "and fix all errors" \
             && exit 1)
 
-      - name: 🎨 Format
+      - name: 🎨 Oxfmt
         run: |
           yarn run format:check || (echo "##[error] found unformatted files. please 'yarn run format'" \
                  "and check in all changes" \
@@ -63,12 +63,12 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     steps:
       - name: 📥​ Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🪄 Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           cache: 'yarn'
 
       - name: 📦 Install dependencies
