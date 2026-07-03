@@ -1,4 +1,5 @@
-import { defineConfig } from 'vite';
+/// <reference types="vitest/config" />
+import { defineConfig } from 'vitest/config';
 import banner from 'vite-plugin-banner';
 import vue from '@vitejs/plugin-vue';
 import pkg from './package.json';
@@ -44,6 +45,14 @@ export default defineConfig({
           vue: 'Vue',
         },
       },
+    },
+  },
+  test: {
+    globals: true,
+    pool: 'forks',
+    environment: 'jsdom',
+    coverage: {
+      reporter: ['text', 'json', 'html', 'clover', 'lcov'],
     },
   },
 });
