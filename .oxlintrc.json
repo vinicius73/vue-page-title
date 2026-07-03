@@ -1,0 +1,7 @@
+{
+  "plugins": ["typescript", "vue"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  }
+}
