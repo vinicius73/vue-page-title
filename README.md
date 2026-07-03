@@ -2,9 +2,7 @@
 
 ![Vue.js html/page title manager](cover.jpg)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/ac0ebf285e98487cce0c/maintainability)](https://codeclimate.com/github/vinicius73/vue-page-title/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/ac0ebf285e98487cce0c/test_coverage)](https://codeclimate.com/github/vinicius73/vue-page-title/test_coverage) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vinicius73/vue-page-title/build-status/master)
-
-[![Known Vulnerabilities](https://snyk.io/test/github/vinicius73/vue-page-title/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vinicius73/vue-page-title?targetFile=package.json) [![Known Vulnerabilities](https://badgen.net/bundlephobia/minzip/vue-page-title)](https://bundlephobia.com/result?p=vue-page-title) [![Tests](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml)
+[![Tests](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml)
 
 [![Example App](https://img.shields.io/website?down_message=Off&label=Example%20App&up_message=On&url=https%3A%2F%2Fvinicius73.github.io%2Fvue-page-title%2Findex.html)](https://vinicius73.github.io/vue-page-title/index.html) [![Doctype](https://img.shields.io/website?down_message=Off&label=Doctype&up_message=On&url=https%3A%2F%2Fvinicius73.github.io%2Fvue-page-title%2Ftypes%2Findex.html)](https://vinicius73.github.io/vue-page-title/types/index.html)
 
