@@ -15,7 +15,7 @@ const mountComponent = (option, mixin = true) => {
       global: {
         plugins: [pageTitle({ mixin, prefix: 'God Mod -' })],
       },
-    }
+    },
   );
 };
 
@@ -63,7 +63,7 @@ describe('pageTitleMixin', () => {
         title: 'Gohan',
         mixins: [pageTitleMixin],
       },
-      false
+      false,
     );
 
     expect(wrapper.html()).toBe('<h1>Gohan</h1>');

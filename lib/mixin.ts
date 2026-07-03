@@ -20,7 +20,7 @@ const pageTitleMixin: ComponentOptionsMixin = {
         (val: string) => {
           this.$setPageTitle(val);
         },
-        { immediate: true }
+        { immediate: true },
       );
       return;
     }
