@@ -1,6 +1,6 @@
 {
   "name": "vue-page-title",
-  "version": "2.2.3",
+  "version": "3.0.0",
   "description": "Vue.js html/page title manager",
   "repository": "https://github.com/vinicius73/vue-page-title",
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
@@ -15,17 +15,17 @@
     "meta"
   ],
   "types": "dist/index.d.ts",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
-  "unpkg": "dist/index.iife.min.js",
-  "jsdelivr": "dist/index.iife.min.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "vite build && yarn run build:minify && yarn build:tsc",
-    "build:minify": "MINIFY=yes vite build",
-    "build:tsc": "tsc lib/index.ts --declaration --emitDeclarationOnly --lib es2022,DOM --outDir dist",
+    "build": "vite build",
     "build:doc": "vue-tsc --noEmit && vite build -c vite.config.example.ts && typedoc",
     "prepack": "yarn run build",
     "dev": "vite dev -c vite.config.example.ts",
@@ -64,6 +64,7 @@
     "typescript": "^5.7.3",
     "vite": "^8.0.0",
     "vite-plugin-banner": "^0.8.1",
+    "vite-plugin-dts": "^5.0.3",
     "vitest": "^3.2.0",
     "vue": "^3.5.39",
     "vue-router": "^4.5.0",
