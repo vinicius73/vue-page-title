@@ -9,7 +9,7 @@ declare module 'vue-router' {
 }
 
 const setupRouter = (router: Router, setTitle: SetTitleFn): void => {
-  router.afterEach((to, from) => {
+  router.afterEach((to, _from) => {
     const { meta } = to;
 
     // if has meta and title
