@@ -10,7 +10,7 @@ const getPattern = (val: string): string => {
       //@ts-ignore
       .trianglify({ height: 540, width: 960, seed: val })
       .toSVGTree()
-      .toString()
+      .toString(),
   );
 };
 

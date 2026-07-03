@@ -29,11 +29,7 @@ const LINKS = [
   },
 ];
 
-export default defineComponent<{
-  $interval: NodeJS.Timer;
-  actual: string;
-  links: typeof LINKS;
-}>({
+export default defineComponent({
   name: 'About',
   LINKS,
   title() {
@@ -45,6 +41,7 @@ export default defineComponent<{
   data() {
     return {
       actual: 'Fullstack Severino',
+      intervalId: null as ReturnType<typeof setInterval> | null,
     };
   },
   computed: {
@@ -53,12 +50,14 @@ export default defineComponent<{
     },
   },
   mounted() {
-    this.$interval = setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.actual = draw(NAMES) ?? 'Non-public interest person.';
     }, 3_000);
   },
   beforeUnmount() {
-    clearInterval(this.$interval);
+    if (this.intervalId != null) {
+      clearInterval(this.intervalId);
+    }
   },
 });
 </script>

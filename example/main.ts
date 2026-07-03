@@ -14,7 +14,7 @@ app.use(
     suffix: '- Vue Page Title',
     mixin: true,
     router,
-  })
+  }),
 );
 
 app.mount('#app');

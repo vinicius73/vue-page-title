@@ -15,7 +15,7 @@ const mountComponent = option => {
       global: {
         plugins: [pageTitle({ prefix: 'SSJ -' })],
       },
-    }
+    },
   );
 };
 

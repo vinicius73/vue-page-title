@@ -4,10 +4,7 @@ import { inject, computed, ref, watch } from 'vue';
 import { PAGE_TITLE, SET_PAGE_TITLE } from './injection-keys';
 
 export type initialValue =
-  | string
-  | ComputedRef<string>
-  | ComputedGetter<string>
-  | WatchSource<string>;
+  string | ComputedRef<string> | ComputedGetter<string> | WatchSource<string>;
 
 /**
  * Get current title or update it.
@@ -52,7 +49,7 @@ export type initialValue =
  * ```
  */
 const useTitle = (
-  initial?: initialValue
+  initial?: initialValue,
 ): { title: ComputedRef<string>; setTitle: SetTitleFn } => {
   const title = inject(PAGE_TITLE, ref<string>(''));
   const setTitle = inject(SET_PAGE_TITLE, () => {});
