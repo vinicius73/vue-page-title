@@ -2,7 +2,7 @@
 
 ![Vue.js html/page title manager](cover.jpg)
 
-[![Tests](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml)
+[![Known Vulnerabilities](https://snyk.io/test/github/vinicius73/vue-page-title/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vinicius73/vue-page-title?targetFile=package.json) [![Known Vulnerabilities](https://badgen.net/bundlephobia/minzip/vue-page-title)](https://bundlephobia.com/result?p=vue-page-title) [![Tests](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/vinicius73/vue-page-title/actions/workflows/tests.yml)
 
 [![Example App](https://img.shields.io/website?down_message=Off&label=Example%20App&up_message=On&url=https%3A%2F%2Fvinicius73.github.io%2Fvue-page-title%2Findex.html)](https://vinicius73.github.io/vue-page-title/index.html) [![Doctype](https://img.shields.io/website?down_message=Off&label=Doctype&up_message=On&url=https%3A%2F%2Fvinicius73.github.io%2Fvue-page-title%2Ftypes%2Findex.html)](https://vinicius73.github.io/vue-page-title/types/index.html)
 
@@ -39,7 +39,21 @@ app.use(
 | Vue | Version                                                       |
 | --- | ------------------------------------------------------------- |
 | v2  | [v1.\*](https://github.com/vinicius73/vue-page-title/tree/v1) |
-| v3  | [v2.\*](https://github.com/vinicius73/vue-page-title/)        |
+| v3  | [v3.\*](https://github.com/vinicius73/vue-page-title/)        |
+
+#### Migration from v2
+
+Version 3 ships as an ES module only. Update your imports if you relied on legacy bundle fields:
+
+```js
+import { pageTitle } from 'vue-page-title';
+```
+
+Breaking changes in v3:
+
+- Removed UMD, CJS, and IIFE builds (`main`, `unpkg`, and `jsdelivr` fields)
+- Package entry is now `exports.import` pointing to `dist/index.js`
+- Node.js 20.19+ is required for development and CI
 
 #### Migration from v1
 
